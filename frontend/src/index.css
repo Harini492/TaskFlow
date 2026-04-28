@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* This removes the default browser padding/margin that causes gaps */
+/* 1. Prevent the bounce/drag effect on the whole page */
+html, body {
+  overflow: hidden; /* Stops the whole page from dragging */
+  overscroll-behavior: none; /* Disables the 'bounce' effect in Chrome/Edge/Safari */
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: fixed; /* Extra layer of protection against dragging */
+}
+
+/* 2. Fix the root container to take up the full window */
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+/* 3. Allow only the Main content to scroll, while Sidebar stays fixed */
+main {
+  overflow-y: auto; 
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling for mobile */
+}
